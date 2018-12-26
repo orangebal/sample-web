@@ -2,21 +2,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: sample-web
+  name: sample-web2
   namespace: default
 spec:
   selector:
     matchLabels:
-      app: sample-web
+      app: sample-web2
   replicas: 2
   revisionHistoryLimit: 10
   template:
     metadata:
       labels:
-        app: sample-web
+        app: sample-web2
     spec:
       containers:
-      - name: sample-web
+      - name: sample-web2
         image: orangebal/apache_php:alpine
         imagePullPolicy: Always
         ports:
@@ -35,10 +35,10 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: sample-web
+  name: sample-web2
   namespace: default
   labels:
-    app: sample-web
+    app: sample-web2
 spec:
   type: LoadBalancer
   ports:
@@ -46,4 +46,4 @@ spec:
       port: 80
       targetPort: 80
   selector:
-    app: sample-web
+    app: sample-web2
