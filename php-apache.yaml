@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: sample-web2
-        image: orangebal/apache_php:alpine
+        image: orangebal/apache_php:latest
         imagePullPolicy: Always
         ports:
         - containerPort: 80
